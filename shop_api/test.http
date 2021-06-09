@@ -1,0 +1,135 @@
+# Товары
+
+GET http://localhost:8000/api/v1/products/
+Content-Type: application/json
+
+###
+
+POST http://localhost:8000/api/v1/products/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+{
+  "name": "Брус 1 ряд 90 см",
+  "price": 1400
+}
+
+###
+
+PATCH http://localhost:8000/api/v1/products/1/
+Content-Type: application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+{
+  "price": 2000
+}
+
+###
+
+DELETE http://localhost:8000/api/v1/products/1/
+Content-Type: application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+### Отзывы
+
+GET http://localhost:8000/api/v1/product-reviews/
+Content-Type: application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+###
+
+POST http://localhost:8000/api/v1/product-reviews/
+Content-Type: application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+{
+  "product":  1,
+  "text": "Брус качественный, смотрится солидно.",
+  "rating": 4
+}
+
+###
+
+PATCH http://localhost:8000/api/v1/product-reviews/1/
+Content-Type:  application/json
+Authorization: Token 5a1ea8854fcad1d8b8c5e33359433695432ed183
+
+{
+  "text": "Брус качественный, смотрится солидно. Ставлю 5.",
+  "rating": 5
+}
+
+###
+
+DELETE http://localhost:8000/api/v1/products/1/
+Content-Type: application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+### Заказы
+
+GET http://localhost:8000/api/v1/orders/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+###
+
+POST http://localhost:8000/api/v1/orders/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+{
+  "ordered_products": [
+    {"product": 3, "quantity": 10},
+    {"product": 1, "quantity": 3}
+  ]
+}
+
+###
+
+PATCH http://localhost:8000/api/v1/orders/1/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+{
+  "status":  "IN_PROGRESS"
+}
+
+###
+
+DELETE http://localhost:8000/api/v1/orders/1/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+### Коллекции
+
+GET http://localhost:8000/api/v1/collections/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+###
+
+POST http://localhost:8000/api/v1/collections/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+{
+  "title": "Брус полый",
+  "text": "Подборка полого бруса",
+  "products": [2, 3]
+}
+
+###
+
+PATCH http://localhost:8000/api/v1/collections/1/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
+
+{
+  "text": "Подбор свежего бруса этого года"
+}
+
+###
+
+DELETE http://localhost:8000/api/v1/collections/1/
+Content-Type:  application/json
+Authorization: Token c2decd3ddcc8c5a85a9b02e388327be99883f976
